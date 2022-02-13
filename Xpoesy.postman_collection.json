@@ -1,0 +1,248 @@
+{
+	"info": {
+		"_postman_id": "49e01313-6fe9-48cf-8b92-2ed8d63fe6da",
+		"name": "Xpoesy",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "User",
+			"item": [
+				{
+					"name": "WalletConnection",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:5000/wallet/connect",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"wallet",
+								"connect"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "WalletInfo",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:5000/wallet/info",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"wallet",
+								"info"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Add_Profile",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "user_name",
+									"value": "Bob Smith",
+									"type": "text"
+								},
+								{
+									"key": "user_image",
+									"value": "https://pngtree/1.jpg",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "localhost:5000/wallet/add_profile",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"wallet",
+								"add_profile"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get_Profile",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:5000/wallet",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"wallet"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "NFT",
+			"item": [
+				{
+					"name": "Create_NFT",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "name",
+									"value": "Funny Boy",
+									"type": "text"
+								},
+								{
+									"key": "collection",
+									"value": "Man",
+									"type": "text"
+								},
+								{
+									"key": "supply",
+									"value": "John Tomas",
+									"type": "text"
+								},
+								{
+									"key": "category",
+									"value": "1",
+									"type": "text"
+								},
+								{
+									"key": "memo",
+									"value": "NFT is non fungible token.",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "localhost:5000/nft/create",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"nft",
+								"create"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get_NFT",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:5000/nft",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"nft"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "XPoem",
+			"item": [
+				{
+					"name": "Get_XPoem",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:5000/xpoem",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"xpoem"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create_XPoem",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "title",
+									"value": "Long Time",
+									"type": "text"
+								},
+								{
+									"key": "nft_link",
+									"value": "https://xpoem/",
+									"type": "text"
+								},
+								{
+									"key": "category",
+									"value": "1",
+									"type": "text"
+								},
+								{
+									"key": "xpoem",
+									"value": "Long time you say about me\nLong time ",
+									"type": "text"
+								},
+								{
+									"key": "author",
+									"value": "John Tomas ",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "localhost:5000/xpoem/create",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"xpoem",
+								"create"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}

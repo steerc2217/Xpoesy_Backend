@@ -1,0 +1,23 @@
+Xpoesy
+
+APIKey : 21565853-cae4-4c36-b541-afd4cf052d6f
+APISecret : 436515b7-2ae3-43d1-bc7c-688e52c7cf85
+
+//test
+Address
+r96PMK5jh45J6f4S36KZEpzS4rwCamoD6d
+Secret
+spxfBaRifJF9pDcJX2bDTWoJnzaGQ
+Balance
+1,000 XRP
+
+//test1
+rJTdvdwE8JvtoYZTjNP1eFN5JcE8TCg32E
+Secret
+shUHshKRr3TYvqNEX8HMb6xWTBtmM
+Balance
+1,000 XRP
+
+//device user_token
+2c1f38ce-a008-44bd-aecc-680926d8c760
+386b0ba1-a4dd-4ece-952c-6207a207f708

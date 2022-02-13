@@ -1,0 +1,1 @@
+{"version":3,"file":"NFTokenBurn.js","sourceRoot":"","sources":["../../../../src/models/transactions/NFTokenBurn.ts"],"names":[],"mappings":";;;AAAA,yCAA8C;AAE9C,qCAAmE;AAiCnE,SAAgB,mBAAmB,CAAC,EAA2B;IAC7D,IAAA,gCAAuB,EAAC,EAAE,CAAC,CAAA;IAE3B,IAAI,EAAE,CAAC,OAAO,IAAI,IAAI,EAAE;QACtB,MAAM,IAAI,wBAAe,CAAC,oCAAoC,CAAC,CAAA;KAChE;AACH,CAAC;AAND,kDAMC"}

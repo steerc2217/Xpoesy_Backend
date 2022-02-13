@@ -1,0 +1,1 @@
+{"version":3,"file":"index.d.ts","sourceRoot":"","sources":["../../../src/sugar/index.ts"],"names":[],"mappings":"AAAA,OAAO,EAAE,OAAO,IAAI,QAAQ,EAAE,MAAM,YAAY,CAAA;AAEhD,OAAO,EAAE,WAAW,EAAE,aAAa,EAAE,MAAM,YAAY,CAAA;AAEvD,OAAO,EAAE,OAAO,IAAI,cAAc,EAAE,MAAM,kBAAkB,CAAA;AAE5D,OAAO,EAAE,OAAO,IAAI,YAAY,EAAE,MAAM,gBAAgB,CAAA;AAExD,cAAc,UAAU,CAAA;AAExB,cAAc,SAAS,CAAA"}

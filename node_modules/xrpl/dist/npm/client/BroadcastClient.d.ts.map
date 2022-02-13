@@ -1,0 +1,1 @@
+{"version":3,"file":"BroadcastClient.d.ts","sourceRoot":"","sources":["../../../src/client/BroadcastClient.ts"],"names":[],"mappings":"AAAA,OAAO,EAAE,MAAM,EAAE,aAAa,EAAE,MAAM,GAAG,CAAA;AAOzC,MAAM,CAAC,OAAO,OAAO,eAAgB,SAAQ,MAAM;IACjD,OAAO,CAAC,QAAQ,CAAC,OAAO,CAAU;gBASf,OAAO,EAAE,MAAM,EAAE,EAAE,OAAO,GAAE,aAAkB;IAsCjE,OAAO,CAAC,cAAc;CAkBvB"}

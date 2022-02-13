@@ -1,0 +1,31 @@
+import { LedgerIndex } from '../common';
+import { LedgerEntry } from '../ledger';
+import { BaseRequest, BaseResponse } from './baseMethod';
+export interface LedgerDataRequest extends BaseRequest {
+    command: 'ledger_data';
+    ledger_hash?: string;
+    ledger_index?: LedgerIndex;
+    binary?: boolean;
+    limit?: number;
+    marker?: unknown;
+}
+declare type LabeledLedgerEntry = {
+    ledgerEntryType: string;
+} & LedgerEntry;
+interface BinaryLedgerEntry {
+    data: string;
+}
+declare type State = {
+    index: string;
+} & (BinaryLedgerEntry | LabeledLedgerEntry);
+export interface LedgerDataResponse extends BaseResponse {
+    result: {
+        ledger_index: number;
+        ledger_hash: string;
+        state: State[];
+        marker?: unknown;
+        validated?: boolean;
+    };
+}
+export {};
+//# sourceMappingURL=ledgerData.d.ts.map

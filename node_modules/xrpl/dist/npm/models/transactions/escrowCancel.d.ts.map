@@ -1,0 +1,1 @@
+{"version":3,"file":"escrowCancel.d.ts","sourceRoot":"","sources":["../../../../src/models/transactions/escrowCancel.ts"],"names":[],"mappings":"AAEA,OAAO,EAAE,eAAe,EAA2B,MAAM,UAAU,CAAA;AAOnE,MAAM,WAAW,YAAa,SAAQ,eAAe;IACnD,eAAe,EAAE,cAAc,CAAA;IAE/B,KAAK,EAAE,MAAM,CAAA;IAKb,aAAa,EAAE,MAAM,CAAA;CACtB;AAQD,wBAAgB,oBAAoB,CAAC,EAAE,EAAE,MAAM,CAAC,MAAM,EAAE,OAAO,CAAC,GAAG,IAAI,CAkBtE"}

@@ -15,4 +15,16 @@ router.post('/create', (req, res) => {
     res.json({success : true})
 })
 
+router.put('/', (req, res) => {
+    req.body.id,
+    req.body.nft_link,
+    req.body.category,
+    req.body.xpoem,
+    req.body.author
+})
+
+router.delete('/', (req, res) => {
+    req.body.id
+})
+
 module.exports = router

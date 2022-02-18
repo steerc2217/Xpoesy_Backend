@@ -1,6 +1,13 @@
 const express = require('express')
 const app = express()
 const bodyParser = require('body-parser')
+const cors = require('cors')
+
+app.use(cors({
+    origin: 'http://localhost:3000',
+    methods: ['GET', 'POST', 'PUT', 'DELETE', 'UPDATE']
+}))
+
 
 const wallet = require('./routes/wallet')
 const nft = require('./routes/nft')

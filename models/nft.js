@@ -9,4 +9,4 @@ const NFTSchema = new Schema({
     memo : String
 })
 
-module.exports = mongoose.model('Nft', NFTSchema)
+module.exports = mongoose.model('nft', NFTSchema)

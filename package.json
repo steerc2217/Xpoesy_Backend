@@ -2,8 +2,9 @@
   "name": "backendxpoesy",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "nodemon index.js",
   "scripts": {
+    "start":"nodemon index.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "",
@@ -14,6 +15,7 @@
     "express": "^4.17.2",
     "ipfs-http-client": "^56.0.1",
     "mongoose": "^6.2.1",
+    "nodemon": "^2.0.15",
     "xrpl": "^2.1.1",
     "xumm-sdk": "^1.0.3"
   }

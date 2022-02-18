@@ -1,30 +1,33 @@
 const express = require('express')
 const router = express.Router()
-let xpoem;
+const Xpoem = require('../models/xpoem')
 
 router.get('/', (req, res) => {
-    res.json(xpoem)
+    
+    Xpoem.find({}).then((xpoems) => {
+        res.json(xpoems)
+    })
+    
 })
 
 router.post('/create', (req, res) => {
-    xpoem = {...xpoem, title : req.body.title}
-    xpoem = {...xpoem, nft_link : req.body.nft_link}
-    xpoem = {...xpoem, category : req.body.category}
-    xpoem = {...xpoem, xpoem : req.body.xpoem}
-    xpoem = {...xpoem, author : req.body.author}
-    res.json({success : true})
+    Xpoem.create(req.body).then((xpoem) => {
+        res.json(xpoem)
+    })
 })
 
-router.put('/', (req, res) => {
-    req.body.id,
-    req.body.nft_link,
-    req.body.category,
-    req.body.xpoem,
-    req.body.author
+router.put('/:id', (req, res) => {
+    Xpoem.findOneAndUpdate({_id : req.params.id}, req.body).then((result) => {
+        Xpoem.findOne({_id : req.params.id }).then((xpoem) => {
+            res.json(xpoem)
+        })
+    })
 })
 
-router.delete('/', (req, res) => {
-    req.body.id
+router.delete('/:id', (req, res) => {
+    Xpoem.deleteOne({_id : req.params.id}).then(() => {
+        res.json({success : true})
+    })
 })
 
 module.exports = router

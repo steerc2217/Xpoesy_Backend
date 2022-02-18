@@ -9,4 +9,4 @@ const XPoem = new Schema({
     author : String
 })
 
-module.exports = mongoose.model('XPoem', XPoem)
+module.exports = mongoose.model('xpoem', XPoem)

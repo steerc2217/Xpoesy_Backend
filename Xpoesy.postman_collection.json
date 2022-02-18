@@ -1,6 +1,6 @@
 {
 	"info": {
-		"_postman_id": "49e01313-6fe9-48cf-8b92-2ed8d63fe6da",
+		"_postman_id": "01ab5f8b-85a6-478a-bdb5-d16607438697",
 		"name": "Xpoesy",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
 	},
@@ -203,12 +203,17 @@
 							"urlencoded": [
 								{
 									"key": "title",
-									"value": "Long Time",
+									"value": "Rabbit and Carrots",
 									"type": "text"
 								},
 								{
 									"key": "nft_link",
-									"value": "https://xpoem/",
+									"value": "https://xpoem/1",
+									"type": "text"
+								},
+								{
+									"key": "xpoem",
+									"value": "Once upon a time one rabbit go on",
 									"type": "text"
 								},
 								{
@@ -217,13 +222,8 @@
 									"type": "text"
 								},
 								{
-									"key": "xpoem",
-									"value": "Long time you say about me\nLong time ",
-									"type": "text"
-								},
-								{
 									"key": "author",
-									"value": "John Tomas ",
+									"value": "Anders Hermann",
 									"type": "text"
 								}
 							]
@@ -237,6 +237,90 @@
 							"path": [
 								"xpoem",
 								"create"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete_Xpem",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": []
+						},
+						"url": {
+							"raw": "localhost:5000/xpoem/:id",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"xpoem",
+								":id"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": "620f8e4142059335477afb71"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "title",
+									"value": "Rabbit and Carrots",
+									"type": "text"
+								},
+								{
+									"key": "nft_link",
+									"value": "https://xpoem/5",
+									"type": "text"
+								},
+								{
+									"key": "xpoem",
+									"value": "Once upon a time one rabbit go on, she wake up, she said where ",
+									"type": "text"
+								},
+								{
+									"key": "category",
+									"value": "2",
+									"type": "text"
+								},
+								{
+									"key": "author",
+									"value": "Anders Hermann",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "localhost:5000/xpoem/:id",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"xpoem",
+								":id"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": "620f660b542d9a11a57bf33a"
+								}
 							]
 						}
 					},

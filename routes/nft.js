@@ -15,11 +15,20 @@ const storage = multer.diskStorage({
 
 const upload =  multer({
     storage : storage,
-    limits : {fileSize : 102400}
+    limits : {fileSize : 104857600}
 }).single('myFile')
 
 let ipfsHash;
 let pins;
+
+router.post('/uploadFile', (req, res) => {
+    upload(req, res, async () => {
+        const file = fs.createReadStream(req.file.path)
+        ipfsHash = await connect.pinFile(file)
+    })
+    res.json({ success : true})
+})
+
 
 router.post('/create', async (req, res) => {
     await connect.pinMetadata(req.body, ipfsHash)
@@ -27,20 +36,11 @@ router.post('/create', async (req, res) => {
     res.json({success : true})
 })
 
-
-router.post('/uploadFile', (req, res) => {
-    upload(req, res, async () => {
-        const file = fs.createReadStream(req.file.path)
-        ipfsHash = await connect.pinFile(file)
-        res.json({ success : true})
-    })
-})
-
 router.get('/', async (req, res) => {
     pins = await connect.getPinList();
     pins = pins.rows
     
-    const nftList = pins.map(pin => {
+    pins = pins.map(pin => {
         const container = {
             token : 'https://gateway.pinata.cloud/ipfs/' + pin.ipfs_pin_hash,
             name : pin.metadata.name,
@@ -52,6 +52,7 @@ router.get('/', async (req, res) => {
             currentOwner : pin.metadata.keyvalues.currentOwner,
             price : pin.metadata.keyvalues.price,
         }
+        return container
     })
     
     res.json(pins)

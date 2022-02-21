@@ -4,7 +4,9 @@ const bodyParser = require('body-parser')
 const cors = require('cors')
 
 const mongoose = require('mongoose')
-const mongoDB = 'https://www.mongodb.com/cloud/atlas/lp/try2?utm_source=google&utm_campaign=gs_footprint_row_search_brand_atlas_desktop&utm_term=mongodb%20cluster&utm_medium=cpc_paid_search&utm_ad=e&utm_ad_campaign_id=7326400240&adgroup=81712667238&gclid=CjwKCAiA6seQBhAfEiwAvPqu124H1dEsnKv8BESCN1aGGjcMD-QgyzTwu3YEETtwBdyZptl_Gbo_SRoCflQQAvD_BwE'
+const mongoDB = 'mongodb://127.0.0.1/xpoesy_database'
+// const mongoDB = 'https://www.mongodb.com/cloud/atlas/lp/try2?utm_source=google&utm_campaign=gs_footprint_row_search_brand_atlas_desktop&utm_term=mongodb%20cluster&utm_medium=cpc_paid_search&utm_ad=e&utm_ad_campaign_id=7326400240&adgroup=81712667238&gclid=CjwKCAiA6seQBhAfEiwAvPqu124H1dEsnKv8BESCN1aGGjcMD-QgyzTwu3YEETtwBdyZptl_Gbo_SRoCflQQAvD_BwE'
+
 
 mongoose.connect(mongoDB, {useNewUrlParser : true, useUnifiedTopology : true}).then(() => {
     console.log('Connected mongodb')

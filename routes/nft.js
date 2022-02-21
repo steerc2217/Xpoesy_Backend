@@ -19,6 +19,7 @@ const upload =  multer({
 }).single('myFile')
 
 let ipfsHash;
+let pins;
 
 router.post('/create', async (req, res) => {
     await connect.pinMetadata(req.body, ipfsHash)
@@ -39,7 +40,7 @@ router.get('/', async (req, res) => {
     pins = await connect.getPinList();
     pins = pins.rows
     
-    let nftList = pins.map(pin => {
+    const nftList = pins.map(pin => {
         const container = {
             token : 'https://gateway.pinata.cloud/ipfs/' + pin.ipfs_pin_hash,
             name : pin.metadata.name,

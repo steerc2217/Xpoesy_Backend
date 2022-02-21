@@ -41,6 +41,7 @@ module.exports = class ConnectPinata{
         const filters = {
             status : 'pinned',
         }
+        
         return await pinata.pinList(filters)
     }
 

@@ -16,7 +16,9 @@
     "express": "^4.17.2",
     "ipfs-http-client": "^56.0.1",
     "mongoose": "^6.2.1",
+    "multer": "^1.4.4",
     "nodemon": "^2.0.15",
+    "path": "^0.12.7",
     "xrpl": "^2.1.1",
     "xumm-sdk": "^1.0.3"
   }

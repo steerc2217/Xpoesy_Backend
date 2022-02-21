@@ -113,27 +113,37 @@
 							"urlencoded": [
 								{
 									"key": "name",
-									"value": "Funny Boy",
+									"value": "Smile lion",
 									"type": "text"
 								},
 								{
 									"key": "collection",
-									"value": "Man",
+									"value": "Lions",
 									"type": "text"
 								},
 								{
 									"key": "supply",
-									"value": "John Tomas",
+									"value": "XRPL",
 									"type": "text"
 								},
 								{
 									"key": "category",
-									"value": "1",
+									"value": "funny",
 									"type": "text"
 								},
 								{
 									"key": "memo",
-									"value": "NFT is non fungible token.",
+									"value": "This lion is smiling",
+									"type": "text"
+								},
+								{
+									"key": "address",
+									"value": "r96PMK5jh45J6f4S36KZEpzS4rwCamoD6d",
+									"type": "text"
+								},
+								{
+									"key": "price",
+									"value": "100",
 									"type": "text"
 								}
 							]
@@ -165,6 +175,35 @@
 							"port": "5000",
 							"path": [
 								"nft"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Image_Upload",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "myFile",
+									"type": "file",
+									"src": "/C:/Users/SteerC/Pictures/Camera Roll/images (1).jfif"
+								}
+							]
+						},
+						"url": {
+							"raw": "localhost:5000/nft/uploadFile",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"nft",
+								"uploadFile"
 							]
 						}
 					},

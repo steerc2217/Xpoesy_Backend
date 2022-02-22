@@ -21,22 +21,17 @@ const upload =  multer({
 }).single('myFile')
 
 let pins;
-let file;
 
-router.post('/uploadFile', (req, res) => {
-    upload(req, res, () => {
-        file = fs.createReadStream(req.file.path)
+router.post('/create',  (req, res) => {
+    upload(req, res, async() => {
+        const file = fs.createReadStream(req.file.path)
+        const token = await connect.pinFile(file)
+        await connect.pinMetadata(req.body, token)
+        res.json({success : true})
     })
-    res.json({ success : true})
+    
 })
 
-
-router.post('/create', async (req, res) => {
-    const token = await connect.pinFile(file)
-    await connect.pinMetadata(req.body, token)
-    file = null;
-    res.json({success : true})
-})
 
 router.get('/', async (req, res) => {
     pins = await connect.getPinList();

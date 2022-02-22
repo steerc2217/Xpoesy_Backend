@@ -90,11 +90,11 @@
 						"method": "POST",
 						"header": [],
 						"body": {
-							"mode": "urlencoded",
-							"urlencoded": [
+							"mode": "formdata",
+							"formdata": [
 								{
 									"key": "name",
-									"value": "Smile lion",
+									"value": "BlockImage",
 									"type": "text"
 								},
 								{
@@ -124,8 +124,13 @@
 								},
 								{
 									"key": "price",
-									"value": "100",
+									"value": "10",
 									"type": "text"
+								},
+								{
+									"key": "myFile",
+									"type": "file",
+									"src": "/C:/Users/SteerC/Pictures/Camera Roll/AlbumArt_{B5020207-474E-4720-F661-6C085426A100}_Large.jpg"
 								}
 							]
 						},
@@ -156,35 +161,6 @@
 							"port": "5000",
 							"path": [
 								"nft"
-							]
-						}
-					},
-					"response": []
-				},
-				{
-					"name": "Image_Upload",
-					"request": {
-						"method": "POST",
-						"header": [],
-						"body": {
-							"mode": "formdata",
-							"formdata": [
-								{
-									"key": "myFile",
-									"type": "file",
-									"src": "/C:/Users/SteerC/Pictures/Camera Roll/images (1).jfif"
-								}
-							]
-						},
-						"url": {
-							"raw": "localhost:5000/nft/uploadFile",
-							"host": [
-								"localhost"
-							],
-							"port": "5000",
-							"path": [
-								"nft",
-								"uploadFile"
 							]
 						}
 					},

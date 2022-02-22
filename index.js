@@ -4,7 +4,8 @@ const bodyParser = require('body-parser')
 const cors = require('cors')
 
 const mongoose = require('mongoose')
-const mongoDB = 'mongodb+srv://Xpoesy-Test:xpoesy@cluster0.olahs.mongodb.net/xpoesy_database?retryWrites=true&w=majority'
+// const mongoDB = 'mongodb://127.0.0.1/xpoesy_database' //testing localhost
+const mongoDB = 'mongodb+srv://Xpoesy-Test:xpoesy@cluster0.olahs.mongodb.net/xpoesy_database?retryWrites=true&w=majority' //testing mongo cluster
 
 
 mongoose.connect(mongoDB, {useNewUrlParser : true, useUnifiedTopology : true}).then(() => {

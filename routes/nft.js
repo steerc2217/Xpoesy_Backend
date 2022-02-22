@@ -5,6 +5,8 @@ const path = require('path')
 const fs = require('fs')
 const ConnectPinata = require('../public/connectPinataIPFS')
 const connect = new ConnectPinata();
+const ConnectXumm = require('../public/connectXumm')
+const connectXumm = new ConnectXumm();
 
 const storage = multer.diskStorage({
     destination : './assets/',
@@ -42,7 +44,8 @@ router.get('/', async (req, res) => {
     pins = pins.map(pin => {
             if(pin.metadata.keyvalues !== null){
                 const container = {
-                    token : 'https://gateway.pinata.cloud/ipfs/' + pin.ipfs_pin_hash,
+                    token :  pin.ipfs_pin_hash,
+                    token_url : 'https://gateway.pinata.cloud/ipfs/' + pin.ipfs_pin_hash,
                     name : pin.metadata.name,
                     collection : pin.metadata.keyvalues.collection ,
                     supply : pin.metadata.keyvalues.supply,
@@ -58,6 +61,13 @@ router.get('/', async (req, res) => {
     })
     
     res.json(pins)
+})
+
+
+//notification test
+router.post('/buy', async (req, res) => {
+    const result = await connectXumm.buyNFT(req.body.address, req.body.user_token, req.body.price)
+    res.json(result)
 })
 
 module.exports = router

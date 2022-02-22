@@ -59,4 +59,37 @@ module.exports  = class ConnectXumm {
 
         return {address : this.user_address, token : this.user_token, balance : this.balance}
     }
+
+    buyNFT = async (address, user_token, price) =>{
+        
+        const request = {
+          "txjson": {
+            "TransactionType": "Payment",
+            "Destination": address,           //tokenOwner's address
+            "Amount": xrpl.xrpToDrops(price) // from xrpl to drops
+          },
+          "user_token": user_token          //device_token
+        }
+
+        
+        const subscription = await Sdk.payload.createAndSubscribe(request, event => {             //send the notification and waiting the response
+          ɑ
+            if(Object.keys(event.data).indexOf('signed') > -1)
+              return event.data
+            
+          })
+  
+          const resolveData = await subscription.resolved
+      
+          if(resolveData.signed == false){                  //If user accepted, return true
+            console.log('The sign request was rejected!')
+            return {success : false}
+          }
+          else{
+            console.log('The sign request was Signed!')
+            return {success : true}
+          }
+          
+    }
+
 }

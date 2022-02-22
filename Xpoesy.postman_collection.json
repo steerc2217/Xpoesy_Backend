@@ -28,25 +28,6 @@
 					"response": []
 				},
 				{
-					"name": "WalletInfo",
-					"request": {
-						"method": "GET",
-						"header": [],
-						"url": {
-							"raw": "localhost:5000/wallet/info",
-							"host": [
-								"localhost"
-							],
-							"port": "5000",
-							"path": [
-								"wallet",
-								"info"
-							]
-						}
-					},
-					"response": []
-				},
-				{
 					"name": "Add_Profile",
 					"request": {
 						"method": "POST",
@@ -204,6 +185,54 @@
 							"path": [
 								"nft",
 								"uploadFile"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Buy_NFT",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "token",
+									"value": "QmS4G5767nuiyHvubdiavnYKFjgkQ9tVmJJapW5DTpSP17",
+									"description": "NFT Token",
+									"type": "text"
+								},
+								{
+									"key": "address",
+									"value": "r96PMK5jh45J6f4S36KZEpzS4rwCamoD6d",
+									"description": "Token Owner Address",
+									"type": "text"
+								},
+								{
+									"key": "user_token",
+									"value": "2c1f38ce-a008-44bd-aecc-680926d8c760",
+									"description": "Current User Device Token, you can get the information when you sign in",
+									"type": "text"
+								},
+								{
+									"key": "price",
+									"value": "100",
+									"description": "Token Price",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "localhost:5000/nft/buy",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"nft",
+								"buy"
 							]
 						}
 					},

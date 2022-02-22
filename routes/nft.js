@@ -34,6 +34,7 @@ router.post('/uploadFile', (req, res) => {
 router.post('/create', async (req, res) => {
     const token = await connect.pinFile(file)
     await connect.pinMetadata(req.body, token)
+    file = null;
     res.json({success : true})
 })
 

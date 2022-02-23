@@ -2,22 +2,21 @@ const express = require('express')
 const router  = express.Router()
 const ConnectXumm = require('../public/connectXumm')
 const connect = new ConnectXumm();
-
+const User = require('../models/user')
 let user;
 
-router.get('/connect', async (req, res) => { 
-    res.type('application/json')
-    user  = await connect.connectXumm(res)
-    res.write(JSON.stringify({success : true}))
+router.get('/connect', async (req, res) => {
+
+    user = await connect.connectXumm(res)
     
-    res.write(JSON.stringify({success : true}))
-    
-    res.write(JSON.stringify({success : true}))
-    res.end()
 })
 
 router.get('/', (req, res) => {
-    res.json(user)
+    if(user){
+        res.json(user)
+    }else{
+        res.json({success : false})
+    }
 })
 
 router.post('/add_profile', (req, res) => {

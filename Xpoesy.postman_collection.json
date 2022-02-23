@@ -33,17 +33,17 @@
 						"method": "POST",
 						"header": [],
 						"body": {
-							"mode": "urlencoded",
-							"urlencoded": [
+							"mode": "formdata",
+							"formdata": [
 								{
 									"key": "user_name",
-									"value": "Bob Smith",
+									"value": "",
 									"type": "text"
 								},
 								{
 									"key": "user_image",
-									"value": "https://pngtree/1.jpg",
-									"type": "text"
+									"type": "file",
+									"src": []
 								}
 							]
 						},
@@ -351,7 +351,7 @@
 					"response": []
 				},
 				{
-					"name": "Update",
+					"name": "Update_Xpoem",
 					"request": {
 						"method": "PUT",
 						"header": [],
@@ -399,6 +399,203 @@
 								{
 									"key": "id",
 									"value": "620f660b542d9a11a57bf33a"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Post_Comment",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "xpoem_id",
+									"value": "620f660b542d9a11a57bf33a",
+									"type": "text"
+								},
+								{
+									"key": "user_id",
+									"value": "620f66dd542d9a11a57bf333",
+									"type": "text"
+								},
+								{
+									"key": "description",
+									"value": "This poem is excited",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "localhost:5000/xpoem/comment",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"xpoem",
+								"comment"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Edit_Comment",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "description",
+									"value": "This is wonderful poem",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "localhost:5000/xpoem/comment/:id",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"xpoem",
+								"comment",
+								":id"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": "621652843c519cdf042a8414"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete_Comment",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "localhost:5000/xpoem/comment/:id",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"xpoem",
+								"comment",
+								":id"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": "62164c23861d9178fe074918"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Post_Reply",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "comment_id",
+									"value": "621652843c519cdf042a8414",
+									"type": "text"
+								},
+								{
+									"key": "reply",
+									"value": "Thank very much",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "localhost:5000/xpoem/reply",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"xpoem",
+								"reply"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Edit_Reply",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "reply",
+									"value": "I will create other poems fsdfsfsdfsdfds",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "localhost:5000/xpoem/reply/:id",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"xpoem",
+								"reply",
+								":id"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": "621652843c519cdf042a8414"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete_Reply",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "localhost:5000/xpoem/reply/:id",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"xpoem",
+								"reply",
+								":id"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": "621652843c519cdf042a8414"
 								}
 							]
 						}

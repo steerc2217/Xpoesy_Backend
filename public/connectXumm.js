@@ -31,8 +31,8 @@ module.exports  = class ConnectXumm {
 
         this.qr_url = subscription.created.next.always
         this.qr_image = subscription.created.refs.qr_png
-        
-        res.write(JSON.stringify({qr_url : this.qr_url, qr_image : this.qr_image}))
+
+        res.json({qr_url : this.qr_url, qr_image : this.qr_image})
 
         const resolveData = await subscription.resolved
 
@@ -92,5 +92,4 @@ module.exports  = class ConnectXumm {
           }
           
     }
-    
 }

@@ -39,10 +39,22 @@ module.exports = class ConnectPinata{
 
     getPinList = async () => {
         const filters = {
-            status : 'pinned',
+            status : 'pinned'
         }
         
         return await pinata.pinList(filters)
+    }
+
+    getPin = async (hash) => {
+        const filters = {
+            status : 'pinned',
+            hashContains : hash
+        }
+        return await pinata.pinList(filters)
+    }
+
+    setMetadata = async (metadata, token) => {
+        return await pinata.hashMetadata(token, metadata)
     }
 
 }

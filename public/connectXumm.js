@@ -31,8 +31,9 @@ module.exports  = class ConnectXumm {
 
         this.qr_url = subscription.created.next.always
         this.qr_image = subscription.created.refs.qr_png
-        res.json({qr_url : this.qr_url, qr_image : this.qr_image})
         
+        res.write(JSON.stringify({qr_url : this.qr_url, qr_image : this.qr_image}))
+
         const resolveData = await subscription.resolved
 
         if(resolveData.signed == false)
@@ -73,12 +74,12 @@ module.exports  = class ConnectXumm {
 
         
         const subscription = await Sdk.payload.createAndSubscribe(request, event => {             //send the notification and waiting the response
-          ɑ
+    
             if(Object.keys(event.data).indexOf('signed') > -1)
-              return event.data
+                return event.data
             
           })
-  
+          
           const resolveData = await subscription.resolved
       
           if(resolveData.signed == false){                  //If user accepted, return true
@@ -91,5 +92,5 @@ module.exports  = class ConnectXumm {
           }
           
     }
-
+    
 }

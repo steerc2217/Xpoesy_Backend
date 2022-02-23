@@ -1,11 +1,11 @@
 const mongoose = require('mongoose')
 const Schema = mongoose.Schema
 
-const NFTSchema = new Schema({
-    name : String,
-    collection : String,
-    supply : String,
-    category : Number,
+const Commet = new Schema({
+    comment : String,
+    xpoem_id : String,
+    reply : String,
+    user_id : Number,
     memo : String
 })
 

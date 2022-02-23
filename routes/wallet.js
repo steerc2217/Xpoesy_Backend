@@ -6,7 +6,14 @@ const connect = new ConnectXumm();
 let user;
 
 router.get('/connect', async (req, res) => { 
+    res.type('application/json')
     user  = await connect.connectXumm(res)
+    res.write(JSON.stringify({success : true}))
+    
+    res.write(JSON.stringify({success : true}))
+    
+    res.write(JSON.stringify({success : true}))
+    res.end()
 })
 
 router.get('/', (req, res) => {

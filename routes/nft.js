@@ -46,7 +46,7 @@ router.get('/', async (req, res) => {
                     collection : pin.metadata.keyvalues.collection ,
                     supply : pin.metadata.keyvalues.supply,
                     category : pin.metadata.keyvalues.category,
-                    memp : pin.metadata.keyvalues.memo,
+                    memo : pin.metadata.keyvalues.memo,
                     mintBy : pin.metadata.keyvalues.mintBy,
                     currentOwner : pin.metadata.keyvalues.currentOwner,
                     price : pin.metadata.keyvalues.price,
@@ -60,10 +60,45 @@ router.get('/', async (req, res) => {
 })
 
 
-//notification test
 router.post('/buy', async (req, res) => {
-    const result = await connectXumm.buyNFT(req.body.address, req.body.user_token, req.body.price)
-    res.json(result)
+    let pin = await connect.getPin(req.body.token)
+    pin = pin.rows[0]
+    const price = pin.metadata.keyvalues.price
+    const destination_address = pin.metadata.keyvalues.currentOwner
+   
+    const result = await connectXumm.buyNFT(destination_address, req.body.user_token, price)
+    if(result.success == true){
+        const metadata = {
+            keyvalues : {
+                currentOwner : req.body.address
+            }
+        }
+        await connect.setMetadata(metadata, req.body.token)
+        res.json({success : true})
+    }else{
+        res.json({success : false})
+    }
+})
+
+router.post('/change', async (req, res) => {
+    
+    let pin = await connect.getPin(req.body.token)
+    pin = pin.rows[0]
+    if(pin.metadata.keyvalues.currentOwner == req.body.address)
+    {
+        const metadata = {
+            keyvalues : {
+                price : req.body.new_price
+            }
+        }
+
+        await connect.setMetadata(metadata, req.body.token)
+
+        res.json({success : true})
+    }else{
+        res.json({success : false})
+    }
+    
 })
 
 module.exports = router

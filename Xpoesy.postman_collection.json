@@ -176,7 +176,7 @@
 							"urlencoded": [
 								{
 									"key": "token",
-									"value": "QmS4G5767nuiyHvubdiavnYKFjgkQ9tVmJJapW5DTpSP17",
+									"value": "QmUdtwuwaaEBbwE4fHq3vTQJ7BATpqUcoNtDuq9rdh1PMa",
 									"description": "NFT Token",
 									"type": "text"
 								},
@@ -191,12 +191,6 @@
 									"value": "2c1f38ce-a008-44bd-aecc-680926d8c760",
 									"description": "Current User Device Token, you can get the information when you sign in",
 									"type": "text"
-								},
-								{
-									"key": "price",
-									"value": "100",
-									"description": "Token Price",
-									"type": "text"
 								}
 							]
 						},
@@ -209,6 +203,47 @@
 							"path": [
 								"nft",
 								"buy"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Change_Price_NFT",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "token",
+									"value": "QmUdtwuwaaEBbwE4fHq3vTQJ7BATpqUcoNtDuq9rdh1PMa",
+									"description": "NFT Token",
+									"type": "text"
+								},
+								{
+									"key": "address",
+									"value": "r96PMK5jh45J6f4S36KZEpzS4rwCamoD6d",
+									"description": "Token Owner Address",
+									"type": "text"
+								},
+								{
+									"key": "new_price",
+									"value": "50",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "localhost:5000/nft/change",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"nft",
+								"change"
 							]
 						}
 					},

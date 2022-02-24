@@ -5,7 +5,7 @@ const XPoem = new Schema({
     title : String,
     nft_link : String,
     xpoem : String,
-    category : Number,
+    category : String,
     author : String
 })
 

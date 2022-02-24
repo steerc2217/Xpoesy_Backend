@@ -601,6 +601,25 @@
 						}
 					},
 					"response": []
+				},
+				{
+					"name": "Get_Comment and Reply",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:5000/xpoem/comment",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"xpoem",
+								"comment"
+							]
+						}
+					},
+					"response": []
 				}
 			]
 		}

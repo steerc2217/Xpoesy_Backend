@@ -2,7 +2,6 @@ const express = require('express')
 const router  = express.Router()
 const ConnectXumm = require('../public/connectXumm')
 const connect = new ConnectXumm();
-const User = require('../models/user')
 let user;
 
 router.get('/connect', async (req, res) => {

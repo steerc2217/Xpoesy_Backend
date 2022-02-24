@@ -3,13 +3,13 @@ const router = express.Router()
 const Xpoem = require('../models/xpoem')
 const Comment = require('../models/comment')
 
-
 router.get('/', (req, res) => {
-    
-    Xpoem.find({}).then((xpoems) => {
-        res.json(xpoems)
-    })
-    
+   Xpoem.findOne({_id : '62170cf9315a5a0f1b57af2a'}).then((result) => {
+    //    res.json(result)
+      Comment.findOne({xpoem_id : result._id}).then((kres) => {
+        res.json(kres)
+      })
+   })
 })
 
 router.post('/create', (req, res) => {

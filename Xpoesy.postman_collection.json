@@ -37,25 +37,37 @@
 							"formdata": [
 								{
 									"key": "user_name",
-									"value": "",
+									"value": "Bob Smith",
 									"type": "text"
 								},
 								{
 									"key": "user_image",
 									"type": "file",
-									"src": []
+									"src": "/C:/Users/SteerC/Pictures/Camera Roll/clint-adair-BW0vK-FA3eg-unsplash.jpg"
+								},
+								{
+									"key": "user_email",
+									"value": "Sky@gmail.com",
+									"type": "text"
 								}
 							]
 						},
 						"url": {
-							"raw": "localhost:5000/wallet/add_profile",
+							"raw": "localhost:5000/wallet/add_profile/:id",
 							"host": [
 								"localhost"
 							],
 							"port": "5000",
 							"path": [
 								"wallet",
-								"add_profile"
+								"add_profile",
+								":id"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": "62189651d3ececa85c56fbaf"
+								}
 							]
 						}
 					},
@@ -74,6 +86,39 @@
 							"port": "5000",
 							"path": [
 								"wallet"
+							],
+							"query": [
+								{
+									"key": "",
+									"value": null,
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Check_Sign",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:5000/wallet/check?",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"wallet",
+								"check"
+							],
+							"query": [
+								{
+									"key": null,
+									"value": null,
+									"description": "if login is ture, you can redirect to get_profile"
+								}
 							]
 						}
 					},

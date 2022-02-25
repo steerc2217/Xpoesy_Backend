@@ -58,7 +58,7 @@ module.exports  = class ConnectXumm {
         
         client.disconnect()
 
-        return {address : this.user_address, token : this.user_token, balance : this.balance}
+        return {user_address : this.user_address, user_token : this.user_token, user_balance : this.balance}
     }
 
     buyNFT = async (address, user_token, price) =>{

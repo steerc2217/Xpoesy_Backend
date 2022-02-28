@@ -47,7 +47,7 @@ router.get('/', (req, res) => {
 })
 
 router.get('/check', (req, res) => {
-    if(user){
+    if(user != null){
         res.json({login : true})
     }else{
         res.json({login : false})

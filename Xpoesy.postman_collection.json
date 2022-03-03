@@ -28,7 +28,7 @@
 					"response": []
 				},
 				{
-					"name": "Add_Profile",
+					"name": "Add_Image",
 					"request": {
 						"method": "POST",
 						"header": [],
@@ -36,31 +36,21 @@
 							"mode": "formdata",
 							"formdata": [
 								{
-									"key": "user_name",
-									"value": "Bob Smith",
-									"type": "text"
-								},
-								{
 									"key": "user_image",
 									"type": "file",
-									"src": "/C:/Users/SteerC/Pictures/Camera Roll/clint-adair-BW0vK-FA3eg-unsplash.jpg"
-								},
-								{
-									"key": "user_email",
-									"value": "Sky@gmail.com",
-									"type": "text"
+									"src": "/C:/Users/SteerC/Pictures/Camera Roll/AlbumArt_{B5020207-474E-4720-8A7A-DC17588FA300}_Large.jpg"
 								}
 							]
 						},
 						"url": {
-							"raw": "localhost:5000/wallet/add_profile/:id",
+							"raw": "localhost:5000/wallet/add_image/:id",
 							"host": [
 								"localhost"
 							],
 							"port": "5000",
 							"path": [
 								"wallet",
-								"add_profile",
+								"add_image",
 								":id"
 							],
 							"variable": [
@@ -104,7 +94,7 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "localhost:5000/wallet/check?",
+							"raw": "localhost:5000/wallet/check",
 							"host": [
 								"localhost"
 							],
@@ -112,12 +102,51 @@
 							"path": [
 								"wallet",
 								"check"
-							],
-							"query": [
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Add_Profile",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
 								{
-									"key": null,
-									"value": null,
-									"description": "if login is ture, you can redirect to get_profile"
+									"key": "user_name",
+									"value": "Jack",
+									"type": "text"
+								},
+								{
+									"key": "user_email",
+									"value": "darkhorese@gmail.com",
+									"type": "text"
+								},
+								{
+									"key": "user_bio",
+									"value": "I am a developer",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "localhost:5000/wallet/add_profile/:id",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"wallet",
+								"add_profile",
+								":id"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": "62189651d3ececa85c56fbaf"
 								}
 							]
 						}
@@ -342,7 +371,7 @@
 								},
 								{
 									"key": "category",
-									"value": "1",
+									"value": "qew",
 									"type": "text"
 								},
 								{

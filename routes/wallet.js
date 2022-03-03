@@ -5,7 +5,6 @@ const connect = new ConnectXumm();
 const User = require('../models/user')
 const multer = require('multer')
 const path = require('path')
-const fs = require('fs')
 
 const storage = multer.diskStorage({
     destination : './assets/',
@@ -54,14 +53,21 @@ router.get('/check', (req, res) => {
     }
 })
 
-router.post('/add_profile/:id', (req, res) => {
+router.post('/add_image/:id', (req, res) => {
     upload(req, res, async() => {
-        let result = req.body
-        result = {...result, user_image: req.file.path }
+        const result = { user_image: req.file.path }
         User.findOneAndUpdate({_id : req.params.id}, result).then((result) => {
             User.findOne({_id : req.params.id}).then((user) => {
                 res.json(user)
             })
+        })
+    })
+})
+
+router.post('/add_profile/:id', (req, res) =>{
+    User.findOneAndUpdate({_id : req.params.id}, req.body).then(() => {
+        User.findOne({_id : req.params.id}).then((user) => {
+            res.json(user)
         })
     })
 })

@@ -7,6 +7,7 @@ const UserSchema = new Schema({
     user_email : {type : String, default:''},
     user_image : {type : String, default:''},
     user_token : {type : String, default:''},
+    user_bio : {type : String, default:''},
     user_balance : String
 })
 

@@ -27,16 +27,17 @@ router.get('/connect', async (req, res) => {
 })
 
 router.get('/', (req, res) => {
+    user = {...user, user_address : 'r96PMK5jh45J6f4S36KZEpzS4rwCamoD6d'}
     if(user){
         User.find({user_address : user.user_address}).then((result) => {
-            if(result){
-                user = null
+            if(result.user_address != null){
                 res.json(result)
+                user = null
             }
             else{
                 User.create(user).then((result) => {
-                    user = null
                     res.json(result)
+                    user = null
                 })
             }
         })
